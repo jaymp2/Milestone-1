@@ -1,7 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Feb 24 15:49:51 2022
-
-@author: jaypa
-"""
-
+dna = TUUUCCCUCGA
+def dna2rna(dna):
+  rna=''
+  if symbol == 'T':
+    rna = rna + 'U'
+  elif symbol == 'U':
+    rna += 'U'
+  elif symbol == 'A':
+    rna += 'A'
+  elif symbol == 'C':
+    rna += 'C'
+  return rna
+print(dna)
