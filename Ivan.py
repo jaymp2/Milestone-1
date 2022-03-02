@@ -1,4 +1,4 @@
-dna="GATGGAACTTGACTACGTAAATT"
+dna = "TACGATCGATCGTCTTCAG"
 def dna2rna(dna):
     rna = ''
     for symbol in dna:
@@ -12,3 +12,6 @@ def dna2rna(dna):
             rna += 'U'
     return rna
 print(dna2rna(dna))
+
+
+
