@@ -13,23 +13,39 @@ def dna2rna(dna):
     return rna
 print(dna2rna(dna))
 
-a=1
-b=0
-c=0
-d=1
-e=0
-f=1
-couple = [a,b,c,d,e,f]
-def count_dom_phenotype(couple):
+def count_dom_phenotype(genotype):
+    a = int(genotype[0])
+    b = int(genotype[1])
+    c = int(genotype[2])
+    d = int(genotype[3])
+    e = int(genotype[4])
+    f = int(genotype[5])
+    if genotype[0] >= 1:
+        genotype[0] = 1
+    else:
+        genotype[0]=0
+    if genotype[1] >= 1:
+        genotype[1] = 1
+    else:
+        genotype[1]=0
+    if genotype[2] >= 1:
+        genotype[2] = 1
+    else:
+        genotype[2]=0
+    if genotype[3] >= 1:
+        genotype[3] = 1
+    else:
+        genotype[3]=0
+    if genotype[4] >= 1:
+        genotype[4] = 1
+    else:
+        genotype[4]=0
+    if genotype[5] >= 1:
+        genotype[5] = 1
+    else:
+        genotype[5]=0
+        genotype = [a,b,c,d,e,f]
     return (((2 * a) + (2 * b) + (2 * c) + ((3/2) * d)+ e + (0 * f)))
-def genotype():   
-    a = int(couple[0])
-    b = int(couple[1])
-    c = int(couple[2])
-    d = int(couple[3])
-    e = int(couple[4])
-    f = int(couple[5])
-print(count_dom_phenotype(couple))
 
 
 
