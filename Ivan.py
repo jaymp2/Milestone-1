@@ -1,4 +1,4 @@
-dna = "TACGATCGATCGTCTTCAG"
+dna = "GATGGAACTTGACTACGTAAATT"
 def dna2rna(dna):
     rna = ''
     for symbol in dna:
@@ -46,6 +46,23 @@ def count_dom_phenotype(genotype):
         genotype[5]=0
         genotype = [a,b,c,d,e,f]
     return (((2 * a) + (2 * b) + (2 * c) + ((3/2) * d)+ e + (0 * f)))
+
+def gc_content(dna_list):
+    gc_letters = 'GC'
+    i=0
+    gc_content_list = []
+    while i in range(len(dna_list)):
+        gc_count=0
+        dna = dna_list[i]
+        for letters in dna:
+            if letters in gc_letters:
+                gc_count = gc_count + 1
+        gc_count = (gc_count/len(dna))*100
+        gc_content_list.append(gc_count)
+        i = i + 1
+    highest_gc = max(gc_content_list)
+    max_index = gc_content_list.index(highest_gc)
+    return max_index, highest_gc
 
 
 
