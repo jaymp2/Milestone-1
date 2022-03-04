@@ -1,0 +1,14 @@
+def reverse_complement(dna):
+    dna = dna[::-1]
+    ans = ""
+    for ch in dna:
+        if ch == "A":
+            ans += "T"
+        elif ch == "C":
+            ans += "G"
+        elif ch == "T":
+            ans += "A"
+        elif ch == "G":
+            ans += "C"
+
+    return ans
