@@ -43,7 +43,11 @@ def splice_rna(dna, intron_list):
         print ("step")
     print(dna)
     stop = codes.find("Stop")
-    cut_codes = codes[0:stop]
+    if stop == -1:
+        cut_codes = codes
+    else:
+        cut_codes = codes[0:stop]
+
     return (cut_codes)
     print (codes)
 print(splice_rna("GTCGAATCTCGAGAGGCATATGGTCACATGAAGGCATATTCGGTCGAGTCGAGCGTTAGTCGATGGTCAGTTTCAAAGTTTGCGCCTAG", ['AGGCATAT', 'TATGGTCA', 'GTCGA']))
