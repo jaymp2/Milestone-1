@@ -18,19 +18,39 @@ def splice_rna(dna, intron_list):
             if symbol == 'A':
                 rna = rna + 'A'
             elif symbol == 'C':
-                rna += 'C'
+                rna = rna + 'C'
             elif symbol == 'G':
                 rna += 'G'
             elif symbol == 'T':
                 rna += 'U'
         return rna
+    print(dna)
+    print(intron_list)
     for intron in intron_list:
-        
-        loc = dna.find(intron)
-        dna = dna.replace(intron, "")
-        print(dna)
-        print (loc)
-    rna = dna2rna(dna)
-    codes = rna2codon(rna)
-    return (codes)
+        for intron in intron_list:
+            print (intron)
+            loc = dna.find(intron)
+            while loc != -1:
+                print (intron)
+                loc = dna.find(intron)
+                dna = dna.replace(intron, "")
+
+                print(dna)
+                print (loc)
+            rna = dna2rna(dna)
+            codes = rna2codon(rna)
+    
+        print ("step")
+    print(dna)
+    stop = codes.find("Stop")
+    cut_codes = codes[0:stop]
+    return (cut_codes)
     print (codes)
+print(splice_rna("GTCGAATCTCGAGAGGCATATGGTCACATGAAGGCATATTCGGTCGAGTCGAGCGTTAGTCGATGGTCAGTTTCAAAGTTTGCGCCTAG", ['AGGCATAT', 'TATGGTCA', 'GTCGA']))
+table = {'UUU':'F', 'UUC':'F', 'UUA':'L', 'UUG':'L', 'UCU':'S', 'UCC':'S', 'UCA':'S', 'UCG':'S', 'UAU':'Y',
+ 'UAC':'Y', 'UAA':'Stop', 'UAG':'Stop', 'UGU':'C', 'UGC':'C', 'UGA':'Stop', 'UGG':'W', 'CUU':'L',
+ 'CUC':'L', 'CUA':'L', 'CUG':'L', 'CCU':'P', 'CCC':'P', 'CCA':'P', 'CCG':'P', 'CAU':'H', 'CAC':'H',
+ 'CAA':'Q', 'CAG':'Q', 'CGU':'R', 'CGC':'R', 'CGA':'R', 'CGG':'R', 'AUU':'I', 'AUC':'I', 'AUA':'I',
+ 'AUG':'M', 'ACU':'T', 'ACC':'T', 'ACA':'T', 'ACG':'T', 'AAU':'N', 'AAC':'N', 'AAA':'K', 'AAG':'K',
+ 'AGU':'S', 'AGC':'S', 'AGA':'R', 'AGG':'R', 'GUU':'V', 'GUC':'V', 'GUA':'V', 'GUG':'V', 'GCU':'A',
+ 'GCC':'A', 'GCA':'A', 'GCG':'A', 'GAU':'D', 'GAC':'D', 'GAA':'E', 'GAG':'E', 'GGU':'G', 'GGC':'G',
