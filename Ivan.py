@@ -65,4 +65,21 @@ def gc_content(dna_list):
     return max_index, highest_gc
 
 
+def rna2codon(rna):
+    def triplet2codon(triplet):
+        allowed_codons = set('AGCU')
+        return table.get(triplet.upper(), 'Invalid')
+    amino = ''
+    for i in range (0, int(len(rna)/3)):
+        x = triplet2codon(rna[3*i:3*i+3])
+        if x == '*':
+            return amino
+        else:
+            amino += x
+    return amino
+
+string = "AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
+
+print(rna2codon(string))
+
 
